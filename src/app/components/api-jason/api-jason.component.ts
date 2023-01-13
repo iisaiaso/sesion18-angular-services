@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JsonService } from 'src/app/services/json.service';
 
 @Component({
@@ -9,8 +10,11 @@ import { JsonService } from 'src/app/services/json.service';
 export class ApiJasonComponent implements OnInit {
 
   json!: any[]
-  constructor(private api:JsonService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private api:JsonService) { }
   ngOnInit(): void {
      this.api.getAll().subscribe(api => this.json = api)
+  }
+  editar(id: string) {
+    this.router.navigate(['/detalle', id])
   }
 }

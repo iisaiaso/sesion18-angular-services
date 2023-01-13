@@ -20,16 +20,18 @@
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            {{ data.userId}}
+            {{ data.id}}
           </th>
           <td class="px-6 py-4">
             {{ data.title}}
           </td>
           <td class="px-6 py-4 text-right">
-            <button >
+            <button 
+            (click)="editar(data.id)"
+            >
               <a
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
+                >Ver mas</a
               >
             </button>
           </td>

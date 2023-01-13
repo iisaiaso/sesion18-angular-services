@@ -1,1 +1,11 @@
-<p>detail-api works!</p>
+<!-- <p>{{id}}</p> -->
+<div class="w-2/5 mx-auto">
+    <div  *ngFor="let data of json">
+        <div *ngIf=" data.id == id">
+         <p>{{data.userId}}</p>
+         <p>{{data.id}}</p>
+         <p>{{data.title}}</p>
+         <p>{{data.completed}}</p>
+        </div>
+ </div>
+</div>
