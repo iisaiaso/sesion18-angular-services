@@ -1,11 +1,36 @@
 <!-- <p>{{id}}</p> -->
 <div class="w-2/5 mx-auto">
-    <div  *ngFor="let data of json">
-        <div *ngIf=" data.id == id">
-         <p>{{data.userId}}</p>
-         <p>{{data.id}}</p>
-         <p>{{data.title}}</p>
-         <p>{{data.completed}}</p>
-        </div>
- </div>
+    <h1 class="font-bold text-xl text-center mt-5">Detalle de Usuario</h1>
+    <div class="px-10 py-5">
+        <div  *ngFor="let data of json">
+            <div *ngIf=" data.id == id" class="flex justify-center ">
+             <div class="w-[384px] rounded overflow-hidden shadow-lg bg-gray-700 text-white">
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 text-center"><span class="mr-4">Id Usuario:</span>{{data.userId}} </div>
+                  <div class="h-1 bg-red-400 mb-6"></div>
+                  <div class="text-md mb-2"><span class="mr-2">Id:</span>{{data.id}} </div>
+                    <p class="font-bold text-md">Titulo</p>
+                    <p class="text-white text-base ml-3">
+                        {{data.title | uppercase}}
+                      </p>
+                </div>
+                <div></div>
+               <div class="px-6">
+                <p>Status</p>
+                <div class="px-6 pt-2 pb-2 flex justify-center" *ngIf="data.completed === true;">
+                    <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    ngClass="bg-green-400"> {{data.completed}}</span>
+                  </div>
+                  <div class="px-6 pt-2 pb-2 flex justify-center" *ngIf="data.completed === false">
+                    <span class="inline-block flex justify-center rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    ngClass="bg-red-400"> {{data.completed}}</span>
+                  </div>
+               </div>
+              </div>
+            </div>
+     </div>
+     <div class="mb-10">
+        <a routerLink="/" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Atras</a>
+       </div>
+    </div>
 </div>
